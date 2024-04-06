@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="500" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.promeme.view.EditableImageView">
+   <children>
+      <BorderPane fx:id="pane" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <right>
+            <AnchorPane prefHeight="420.0" prefWidth="0.0">
+               <children>
+                  <TextArea fx:id="content" layoutY="12.0" onKeyReleased="#setOnContentTyped" prefHeight="232.0" prefWidth="183.0" AnchorPane.leftAnchor="0.0" />
+                  <HBox alignment="CENTER_LEFT" layoutX="-5.0" layoutY="250.0" prefHeight="25.0" prefWidth="182.0" AnchorPane.leftAnchor="0.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="74.0" text="Size:">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="sizeField" onKeyReleased="#setOnFontSizeTyped" prefHeight="26.0" prefWidth="125.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#setOnIncreaseFontSizeButton" prefHeight="26.0" prefWidth="62.0" text="+" />
+                        <Button mnemonicParsing="false" onAction="#setOnDecreaseFontSizeButton" prefHeight="26.0" prefWidth="60.0" text="-" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets left="15.0" />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox layoutX="-5.0" layoutY="283.0" prefHeight="19.0" prefWidth="182.0" AnchorPane.leftAnchor="0.0">
+                     <children>
+                        <Label prefHeight="29.0" prefWidth="39.0" text="Font:">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="fontFamilyMenu" editable="true" onAction="#setOnFontChange" prefHeight="26.0" prefWidth="141.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutY="315.0" prefHeight="34.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="38.0" text="Color:">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="colorMenu" onAction="#setOnColorChange" prefHeight="26.0" prefWidth="141.0" />
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="20.0" />
+               </BorderPane.margin>
+            </AnchorPane>
+         </right>
+         <bottom>
+            <HBox prefHeight="25.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#setOnIncreaseImageHolderSize" prefHeight="25.0" prefWidth="25.0" text="+" />
+                  <Button mnemonicParsing="false" onAction="#setOnDecreaseImageHolderSize" prefHeight="25.0" prefWidth="25.0" text="-" />
+                  <TextField fx:id="scaleField" prefHeight="26.0" prefWidth="96.0" />
+                  <Button mnemonicParsing="false" onAction="#setOnFitButton" prefHeight="25.0" prefWidth="25.0" text="=" />
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <AnchorPane fx:id="centerPane" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="18.0" top="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <ScrollPane prefHeight="394.0" prefWidth="283.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <content>
+                        <HBox fx:id="alignBox" alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                           <children>
+                            <AnchorPane fx:id="imageHolder" onMouseClicked="#setOnImageHolderClicked" />
+                           </children>
+                        </HBox>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <MenuBar prefHeight="26.0" prefWidth="604.0" BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <Menu mnemonicParsing="false" text="Open">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#setOnOpenFromProjectButton" text="Project" />
+                              <MenuItem mnemonicParsing="false" onAction="#setOnOpenFromImageButton" text="From image" />
+                          </items>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" onAction="#setOnSaveButton" text="Save" />
+                        <MenuItem mnemonicParsing="false" onAction="#setOnExportButton" text="Export" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Edit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setOnDeleteButton" text="Delete" />
+                        <MenuItem mnemonicParsing="false" onAction="#setOnAddTextButton" text="Add Text" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
