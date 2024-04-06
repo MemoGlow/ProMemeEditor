@@ -30,7 +30,6 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader fxml = new FXMLLoader(EditableImageView.class.getResource("library-view.fxml"));
-//        FXMLLoader fxml = new FXMLLoader(EditableImageView.class.getResource("editable-image-view.fxml"));
         Parent root = fxml.load();
         Scene scene = new Scene(root);
         Stage stage = new Stage();
@@ -38,67 +37,6 @@ public class App extends Application {
         stage.setMinHeight(550);
         stage.setMinWidth(835);
         stage.show();
-
-//        EditableImage editableImage = new EditableImage();
-//        editableImage.setImagePath("C:\\Users\\MemoGlow\\AppData\\Roaming\\Microsoft\\Windows\\Network Shortcuts\\hehe.png");
-//        EditableText text = new EditableText();
-//        text.setText("Hello");
-//        text.setFont(new Font(100));
-//        text.setFill(Color.RED);
-//        editableImage.getTexts().add(text);
-//        ObjectOutputStream ous = new ObjectOutputStream(new FileOutputStream(new File("sample")));
-//        System.out.println(editableImage.getImagePath());
-//        System.out.println(editableImage.getTexts().size());
-//        System.out.println(editableImage.getTexts().get(0));
-
-//        ous.writeObject(editableImage);
-//        ous.close();
-//        editableImage = null;
-//        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File("sample")));
-//        editableImage = (EditableImage) ois.readObject();
-//        System.out.println(editableImage.getImagePath());
-//        System.out.println(editableImage.getTexts().size());
-//        System.out.println(editableImage.getTexts().get(0));
-//        ois.close();
-//        EditableText text = new EditableText();
-//        text.setText("Hello ");
-//        ObjectOutputStream ous = new ObjectOutputStream(new FileOutputStream("sample"));
-//        text.setX(23.5);
-//        ous.writeObject(text);
-//        System.out.println(text);
-//        text = null;
-//        ous.close();
-//        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("sample"));
-//        text = (EditableText) ois.readObject();
-//        System.out.println(text);
-//        System.out.println();
-
-
-
-//        ArrayList<EditableText> texts = new ArrayList<EditableText>();
-//        EditableText textToAdd = new EditableText();
-//        textToAdd.setText("Hell world");
-//        texts.add(textToAdd);
-//        EditableImage editableImage =  new EditableImage();
-////        editableImage.setImagePath();
-//        editableImage.setTexts(texts);
-//        System.out.println(editableImage.getTexts().get(0));
-//        ObjectOutputStream ous = new ObjectOutputStream(new FileOutputStream("sample"));
-//        ous.writeObject(editableImage);
-//        ous.close();
-//
-//        editableImage = null;
-//        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("sample"));
-//        editableImage = (EditableImage) ois.readObject();
-//        System.out.println(editableImage.getTexts().get(0));
-//        System.out.println(editableImage);
-
-//        AnchorPane pane = new AnchorPane();
-//        Label label = new Label("Hello world");
-//        pane.getChildren().add(label);
-//        WritableImage wb = pane.snapshot(null, null);
-//        File file = new File("example.png");
-//        ImageIO.write(SwingFXUtils.fromFXImage(wb, null), "png", file);
     }
 
     public static void main(String[] args) {

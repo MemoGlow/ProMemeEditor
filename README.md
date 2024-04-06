@@ -48,11 +48,8 @@ Cách cài đặt dự án
 
 ```bash
   - Clone dự án
-  - Mở terminal và chạy lệnh: mvn clean install
-  - Chạy ứng dụng
-
-  - Down file jar từ ...
-  - Chạy file jar
+  - Thêm thư viện javafx vào module
+  - Chạy ứng dụng tử class App.
 ```
     
 
